@@ -1,0 +1,111 @@
+name: pomodo
+description: "a productivity Pomodoro timer"
+
+# ------------------------- ALLGEMEINE INFOS-------------------------------- #
+# Wenn man publishen möchte …
+publish_to: 'none'
+# Versioning (wird hier erstmal ignoriert)
+version: 1.0.0+1
+#Environment Anforderungen:
+#Projekt ist für Flutter SDK 3.7.0 oder neuere Versionen verwendbar
+environment:
+  sdk: ^3.7.0
+
+# ------------------------- PACKAGES -------------------------------- #
+# Listet alle externen Pakete und Bibliotheken auf, die die Flutter-App benötigt
+dependencies:
+  flutter:
+    sdk: flutter
+  # Cupertino Icons font wird hinzugefügt
+  # Klasse CupertinoIcons für IOS-Style Icons verwenden
+  cupertino_icons: ^1.0.8
+  # Paket zum Sliden bei den Aufgaben Feldern
+  flutter_slidable: ^4.0.0
+  # Paket zur Tonausgabe beim Timer-Ablauf
+  audioplayers: ^6.2.0
+  # Provider, um Timer im Hintergrund updaten zu können
+  provider: ^6.0.0
+  # Paket für Punkte anzeige beim Swipen
+  smooth_page_indicator: ^1.1.0
+  # Paket für Colorauswahl
+  flutter_colorpicker: ^1.1.0
+  # Paket zum Speichern von den Einstellungen der App
+  shared_preferences: ^2.5.2
+  # Paket zum Speichern von Gesamtzahlen
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+  path_provider: ^2.1.5
+
+
+# Pakete, die nur während der Entwicklung benötigt werden
+dev_dependencies:
+  # Zur Generierung von App-Icons
+  flutter_launcher_icons: ^0.13.1
+  # Tools für Tests
+  flutter_test:
+    sdk: flutter
+  # Enthält empfohlene Code-Style-Regeln
+  flutter_lints: ^5.0.0
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/Logo/Logo2048.png"
+  remove_alpha_ios: true
+
+# ------------------------- FLUTTER PACKAGES -------------------------------- #
+flutter:
+  # Material-Icons-Font wird verwendet
+  # kann über die Icons Class verwendet werden
+  uses-material-design: true
+
+  # assets für die App
+  assets:
+    - assets/images/Logo/
+    - assets/images/Tomato/
+    - assets/sounds/
+
+# ------------------------- ZUSÄTZLICHE INFORMATIONEN -------------------------------- #
+
+# --- 1. dependencies --- #
+  # Dependencies specify other packages that your package needs in order to work.
+  # To automatically upgrade your package dependencies to the latest versions
+  # consider running `flutter pub upgrade --major-versions`. Alternatively,
+  # dependencies can be manually updated by changing the version numbers below to
+  # the latest version available on pub.dev. To see which dependencies have newer
+  # versions available, run `flutter pub outdated`.
+
+
+# --- 2. flutter lints ---
+  # The "flutter_lints" package below contains a set of recommended lints to
+  # encourage good coding practices. The lint set provided by the package is
+  # activated in the `analysis_options.yaml` file located at the root of your
+  # package. See that file for information about deactivating specific lint
+  # rules and activating additional ones.
+
+# --- 3. mehr assets hinzufügen ---
+  # An image asset can refer to one or more resolution-specific "variants", see
+  # https://flutter.dev/to/resolution-aware-images
+
+  # For details regarding adding assets from package dependencies, see
+  # https://flutter.dev/to/asset-from-package
+
+  # To add custom fonts to your application, add a fonts section here,
+  # in this "flutter" section. Each entry in this list should have a
+  # "family" key with the font family name, and a "fonts" key with a
+  # list giving the asset and other descriptors for the font. For
+  # example:
+  # fonts:
+  #   - family: Schyler
+  #     fonts:
+  #       - asset: fonts/Schyler-Regular.ttf
+  #       - asset: fonts/Schyler-Italic.ttf
+  #         style: italic
+  #   - family: Trajan Pro
+  #     fonts:
+  #       - asset: fonts/TrajanPro.ttf
+  #       - asset: fonts/TrajanPro_Bold.ttf
+  #         weight: 700
+  #
+  # For details regarding fonts from package dependencies,
+  # see https://flutter.dev/to/font-from-package
