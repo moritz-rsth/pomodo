@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:pomodo/utils/page_indicator.dart';
 import 'home_screen.dart';
@@ -61,7 +62,10 @@ class _StartingPageState extends State<StartingPage> {
             _showPageIndicator();
           });
         },
-
+        // Tippen auf den Bildschirm → Info anzeigen
+        onTap: () {
+          _showInfoSnackBar(context);
+        },
         // Haupt-Stack
         child: Stack(
           alignment: Alignment.bottomCenter,
@@ -91,8 +95,6 @@ class _StartingPageState extends State<StartingPage> {
               },
             ),
 
-
-
             //Page Indicator
             PageIndicator(
                 opacity: _pageIndicatorOpacity,
@@ -100,6 +102,17 @@ class _StartingPageState extends State<StartingPage> {
                 pageController: _pageController,
                 context: context
             ),
+
+            // Einstellungsbutton (nur im Web sichtbar)
+            if (kIsWeb)
+              Positioned(
+                left: 16, // Abstand vom linken Rand
+                bottom: 16, // Abstand vom unteren Rand
+                child: FloatingActionButton(
+                  onPressed: _openSettings,
+                  child: Icon(Icons.settings),
+                ),
+              ),
           ],
         ),
       ),
@@ -166,4 +179,13 @@ class _StartingPageState extends State<StartingPage> {
     });
   }
 
+  void _showInfoSnackBar(BuildContext context) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text('Swipe to change pages'),
+        duration: Duration(seconds: 1), // Anzeigedauer
+        behavior: SnackBarBehavior.fixed, // Positioniert den SnackBar oben
+      ),
+    );
+  }
 }

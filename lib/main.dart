@@ -40,7 +40,7 @@ class _MyAppState extends State<MyApp> {
     final colorProvider = Provider.of<ColorProvider>(context);
 
     return MaterialApp(
-      title: 'Meine App mit Dark Mode',
+      title: 'pomodo',
       debugShowCheckedModeBanner: false,
       // Light und Dark Theme der App definieren (aus App Colors)
       theme: ThemeData(
