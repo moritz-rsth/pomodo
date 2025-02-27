@@ -22,7 +22,7 @@ jobs:
         run: flutter pub get
 
       - name: Build Web
-        run: flutter build web
+        run: flutter build web --base-href /docs/
 
       - name: Copy Web Build to docs
         run: |
